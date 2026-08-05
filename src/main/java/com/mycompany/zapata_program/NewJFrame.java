@@ -50,8 +50,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel2.setText("password:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 103, -1, -1));
-        getContentPane().add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 110, -1));
-        getContentPane().add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 110, -1));
+        getContentPane().add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 190, -1));
+        getContentPane().add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 190, -1));
 
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
