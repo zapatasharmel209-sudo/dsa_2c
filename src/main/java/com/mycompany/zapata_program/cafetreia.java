@@ -9,12 +9,15 @@ import java.util.Scanner;
  *
  * @author CL2-PC
  */
-public class Midterm_Project extends javax.swing.JFrame {
+public class cafetreia extends javax.swing.JFrame {
 
     /**
-     * Creates new form Midterm_Project
+     * Creates new form cafetreia
      */
-   
+    public cafetreia() {
+        initComponents();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,6 +76,7 @@ public class Midterm_Project extends javax.swing.JFrame {
         jCheckBox18 = new javax.swing.JCheckBox();
         jCheckBox19 = new javax.swing.JCheckBox();
         jCheckBox20 = new javax.swing.JCheckBox();
+        jCheckBox21 = new javax.swing.JCheckBox();
         jPanel11 = new javax.swing.JPanel();
         jCheckBox22 = new javax.swing.JCheckBox();
         jCheckBox23 = new javax.swing.JCheckBox();
@@ -81,6 +85,7 @@ public class Midterm_Project extends javax.swing.JFrame {
         jCheckBox26 = new javax.swing.JCheckBox();
         jCheckBox27 = new javax.swing.JCheckBox();
         jCheckBox28 = new javax.swing.JCheckBox();
+        jCheckBox24 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -217,6 +222,11 @@ public class Midterm_Project extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("BUY NOW");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 240, -1));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 440, 230));
@@ -275,6 +285,11 @@ public class Midterm_Project extends javax.swing.JFrame {
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("ORDER AGAIN");
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 210, 30));
 
         jPanel9.setBackground(new java.awt.Color(0, 0, 102));
@@ -308,6 +323,11 @@ public class Midterm_Project extends javax.swing.JFrame {
         jPanel10.add(jCheckBox20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel9.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 130, 50));
+
+        jCheckBox21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jCheckBox21.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox21.setText("[2] - SPRITE (P 25)");
+        jPanel9.add(jCheckBox21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
 
         getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 130, 20));
 
@@ -345,6 +365,11 @@ public class Midterm_Project extends javax.swing.JFrame {
 
         jPanel11.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 130, 50));
 
+        jCheckBox24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jCheckBox24.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox24.setText("[1] - COKE (P 25)");
+        jPanel11.add(jCheckBox24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, -1));
+
         getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 130, 20));
 
         pack();
@@ -354,11 +379,107 @@ public class Midterm_Project extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+
+        if (!jCheckBox12.isSelected()
+            && !jCheckBox7.isSelected()
+            && !jCheckBox24.isSelected()
+            && !jCheckBox21.isSelected()) {
+
+            System.out.println("Please select an item.");
+
+            jTextField2.setText("Please select an item");
+            jpanel5.setText("");
+
+            return;
+        }
+
+        int quantity = Integer.parseInt(
+            jComboBox1.getSelectedItem().toString()
+        );
+
+        if (quantity == 0) {
+
+            System.out.println("Please select a quantity.");
+
+            jTextField2.setText("Select quantity");
+
+            return;
+        }
+
+        double subtotal = Double.parseDouble(
+            jpanel5.getText()
+        );
+
+        try {
+
+            double cash = Double.parseDouble(
+                jTextField4.getText()
+            );
+
+            if (cash < subtotal) {
+
+                System.out.println("================================");
+                System.out.println("INSUFFICIENT CASH");
+                System.out.println("Subtotal: P" + subtotal);
+                System.out.println("Cash: P" + cash);
+                System.out.println("================================");
+
+                jTextField5.setText("Insufficient");
+
+                return;
+            }
+
+            double change = cash - subtotal;
+
+            jTextField5.setText(
+                String.format("%.2f", change)
+            );
+
+            System.out.println("================================");
+            System.out.println("         ORDER SUCCESSFUL");
+            System.out.println("================================");
+            System.out.println("Selected Items: " + jTextField2.getText());
+            System.out.println("Quantity: " + quantity);
+            System.out.println("Subtotal: P" + subtotal);
+            System.out.println("Cash: P" + cash);
+            System.out.println("Change: P" + change);
+            System.out.println("================================");
+
+        } catch (NumberFormatException e) {
+
+            System.out.println("Invalid cash amount.");
+
+            jTextField5.setText("Invalid cash");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        jCheckBox12.setSelected(false);
+        jCheckBox7.setSelected(false);
+        jCheckBox24.setSelected(false);
+        jCheckBox21.setSelected(false);
+
+        jComboBox1.setSelectedIndex(0);
+
+        jTextField2.setText("");
+        jpanel5.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+
+        System.out.println("================================");
+        System.out.println("ORDER RESET");
+        System.out.println("Ready for a new order.");
+        System.out.println("================================");
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String [] args) {
-
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -372,187 +493,24 @@ public class Midterm_Project extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Midterm_Project.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cafetreia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Midterm_Project.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cafetreia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Midterm_Project.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cafetreia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Midterm_Project.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cafetreia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-    act();
-    
-    }
 
-        /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-/**
- *
- * @author Operator
- */
-    //recursion pre-setup
-    private static void act()
-    {
-        Scanner input = new Scanner(System.in);
-        System.out.println("[1] = Snacks");
-        System.out.println("[2] = Drinks");
-        System.out.println("enter your choice:");
-        int choice1 = input.nextInt();
-        if(choice1 == 1)
-        {
-            System.out.println("Snakcs");
-            System.out.println("[1] = Piatos [22 pesos]");
-            System.out.println("[2] = Nova [25 pesos]");
-            System.out.println("enter your choice:");
-            int snackschoi1 = input.nextInt();
-                if(snackschoi1 == 1)
-                {
-                    System.out.println("You chosen Piatos ");
-                    System.out.println("price is 22 pesos");
-                    int piatos = 22;
-                    System.out.println("Enter quantity:");
-                    int quan1 = input.nextInt();
-                    int subtot = quan1 * piatos;
-                    System.out.println("Subtotal is : "+subtot);
-                    System.out.println("Enter cash:");
-                    int cash = input.nextInt();
-                    int tot = cash - subtot;
-                    while(cash < subtot)
-                    {
-                    System.out.println("Enter cash:");
-                    cash = input.nextInt();
-                    tot = cash - subtot;
-                    }
-                    System.out.println("Your change is :" + tot);
-                }
-            
-        }
-        
-        
-    }
-}
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
-
-/**
- *
- * @author Operator
- */
-public class Mavenproject5 {
-
-    public static void main(String[] args) {
-
-        act();
-
-    }
-
-    // Recursion method
-    private static void act() {
-
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("[1] = Snacks");
-        System.out.println("[2] = Drinks");
-        System.out.println("Enter your choice:");
-        int choice1 = input.nextInt();
-
-        if (choice1 == 1) {
-
-            System.out.println("Snacks");
-            System.out.println("[1] = Piatos [22 pesos]");
-            System.out.println("[2] = Nova [25 pesos]");
-            System.out.println("Enter your choice:");
-            int snackschoi1 = input.nextInt();
-
-            if (snackschoi1 == 1) {
-
-                System.out.println("You chose Piatos");
-                System.out.println("Price is 22 pesos");
-
-                int piatos = 22;
-
-                System.out.println("Enter quantity:");
-                int quan1 = input.nextInt();
-
-                int subtot = quan1 * piatos;
-
-                System.out.println("Subtotal is: " + subtot);
-
-                System.out.println("Enter cash:");
-                int cash = input.nextInt();
-
-                while (cash < subtot) {
-                    System.out.println("Insufficient cash!");
-                    System.out.println("Enter cash:");
-                    cash = input.nextInt();
-                }
-
-                int tot = cash - subtot;
-
-                System.out.println("Your change is: " + tot);
-            }
-
-            else if (snackschoi1 == 2) {
-
-                System.out.println("You chose Nova");
-                System.out.println("Price is 25 pesos");
-
-                int nova = 25;
-
-                System.out.println("Enter quantity:");
-                int quan1 = input.nextInt();
-
-                int subtot = quan1 * nova;
-
-                System.out.println("Subtotal is: " + subtot);
-
-                System.out.println("Enter cash:");
-                int cash = input.nextInt();
-
-                while (cash < subtot) {
-                    System.out.println("Insufficient cash!");
-                    System.out.println("Enter cash:");
-                    cash = input.nextInt();
-                }
-
-                int tot = cash - subtot;
-
-                System.out.println("Your change is: " + tot);
-            }
-        }
-
-        // Ask if the user wants to repeat
-        System.out.println("\nDo you want to order again?");
-        System.out.println("[1] = Yes");
-        System.out.println("[2] = No");
-        System.out.println("Enter choice:");
-
-        int again = input.nextInt();
-
-        if (again == 1) {
-
-            // RECURSION
-            act();
-
-        } else {
-
-            System.out.println("Thank you for ordering!");
-        }
-    }
-}
-
-       
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Midterm_Project().setVisible(true);
+                new cafetreia().setVisible(true);
             }
         });
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -570,8 +528,10 @@ public class Mavenproject5 {
     private javax.swing.JCheckBox jCheckBox19;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox20;
+    private javax.swing.JCheckBox jCheckBox21;
     private javax.swing.JCheckBox jCheckBox22;
     private javax.swing.JCheckBox jCheckBox23;
+    private javax.swing.JCheckBox jCheckBox24;
     private javax.swing.JCheckBox jCheckBox25;
     private javax.swing.JCheckBox jCheckBox26;
     private javax.swing.JCheckBox jCheckBox27;
@@ -612,4 +572,4 @@ public class Mavenproject5 {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jpanel5;
     // End of variables declaration//GEN-END:variables
-
+}
