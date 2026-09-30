@@ -52,11 +52,11 @@ public class cafetreia extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLLabel11 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jpanel5 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
+        jTextField3 = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jCheckBox9 = new javax.swing.JCheckBox();
         jCheckBox10 = new javax.swing.JCheckBox();
@@ -166,7 +166,12 @@ public class cafetreia extends javax.swing.JFrame {
         jCheckBox3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox3.setText("[2] - NOVA (P 25)");
-        jPanel4.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 20));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 130, 20));
 
@@ -202,8 +207,13 @@ public class cafetreia extends javax.swing.JFrame {
         jLLabel11.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         jLLabel11.setText("Cash:");
         jPanel5.add(jLLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 240, -1));
-        jPanel5.add(jpanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 240, -1));
 
         jTextField4.setToolTipText("");
         jPanel5.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 240, -1));
@@ -228,6 +238,7 @@ public class cafetreia extends javax.swing.JFrame {
             }
         });
         jPanel5.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 240, -1));
+        jPanel5.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 240, -1));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 440, 230));
 
@@ -248,6 +259,11 @@ public class cafetreia extends javax.swing.JFrame {
         jCheckBox12.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox12.setText("[1] - PIATOS (P 22)");
         jCheckBox12.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jCheckBox12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox12ActionPerformed(evt);
+            }
+        });
         jPanel7.add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 204));
@@ -278,6 +294,11 @@ public class cafetreia extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("EXIT");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 220, 30));
 
         jButton3.setBackground(new java.awt.Color(0, 51, 153));
@@ -327,6 +348,11 @@ public class cafetreia extends javax.swing.JFrame {
         jCheckBox21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jCheckBox21.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox21.setText("[2] - SPRITE (P 25)");
+        jCheckBox21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox21ActionPerformed(evt);
+            }
+        });
         jPanel9.add(jCheckBox21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
 
         getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 130, 20));
@@ -368,6 +394,11 @@ public class cafetreia extends javax.swing.JFrame {
         jCheckBox24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jCheckBox24.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox24.setText("[1] - COKE (P 25)");
+        jCheckBox24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox24ActionPerformed(evt);
+            }
+        });
         jPanel11.add(jCheckBox24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, -1));
 
         getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 130, 20));
@@ -390,7 +421,7 @@ public class cafetreia extends javax.swing.JFrame {
             System.out.println("Please select an item.");
 
             jTextField2.setText("Please select an item");
-            jpanel5.setText("");
+            jTextField3.setText("");
 
             return;
         }
@@ -409,7 +440,7 @@ public class cafetreia extends javax.swing.JFrame {
         }
 
         double subtotal = Double.parseDouble(
-            jpanel5.getText()
+            jTextField3.getText()
         );
 
         try {
@@ -439,8 +470,7 @@ public class cafetreia extends javax.swing.JFrame {
 
             System.out.println("================================");
             System.out.println("         ORDER SUCCESSFUL");
-            System.out.println("================================");
-            System.out.println("Selected Items: " + jTextField2.getText());
+            System.out.println("================================"); 
             System.out.println("Quantity: " + quantity);
             System.out.println("Subtotal: P" + subtotal);
             System.out.println("Cash: P" + cash);
@@ -465,7 +495,7 @@ public class cafetreia extends javax.swing.JFrame {
         jComboBox1.setSelectedIndex(0);
 
         jTextField2.setText("");
-        jpanel5.setText("");
+        jTextField3.setText("");
         jTextField4.setText("");
         jTextField5.setText("");
 
@@ -475,6 +505,38 @@ public class cafetreia extends javax.swing.JFrame {
         System.out.println("================================");
 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
+        // TODO add your handling code here:
+          updateSelectedItems();
+    }//GEN-LAST:event_jCheckBox12ActionPerformed
+
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        updateSelectedItems();
+        calculateSubtotal();
+
+ updateSelectedItems();    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jCheckBox24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox24ActionPerformed
+updateSelectedItems();
+        calculateSubtotal();
+ updateSelectedItems();    }//GEN-LAST:event_jCheckBox24ActionPerformed
+
+    private void jCheckBox21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox21ActionPerformed
+ 
+        updateSelectedItems();
+calculateSubtotal();        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox21ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -504,10 +566,8 @@ public class cafetreia extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new cafetreia().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new cafetreia().setVisible(true);
         });
     }
 
@@ -568,8 +628,71 @@ public class cafetreia extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jpanel5;
     // End of variables declaration//GEN-END:variables
+
+    private void updateSelectedItems() {
+    String items = "";
+    double price = 0;
+
+    if (jCheckBox12.isSelected()) {
+        items += "PIATOS, ";
+        price += 22;
+    }
+
+    if (jCheckBox3.isSelected()) {
+        items += "NOVA, ";
+        price += 25;
+    }
+
+    if (jCheckBox24.isSelected()) {
+        items += "COKE, ";
+        price += 25;
+    }
+
+    if (jCheckBox21.isSelected()) {
+        items += "SPRITE, ";
+        price += 25;
+    }
+
+    if (!items.isEmpty()) {
+        items = items.substring(0, items.length() - 2);
+    }
+
+    jTextField2.setText(items);
+
+    calculateSubtotal();
+}
+
+    private void calculateSubtotal() {
+           double price = 0;
+
+    String items = jTextField1.getText();
+
+    if (items.contains("PIATOS")) {
+        price += 22;
+    }
+
+    if (items.contains("NOVA")) {
+        price += 25;
+    }
+
+    if (items.contains("COKE")) {
+        price += 25;
+    }
+
+    if (items.contains("SPRITE")) {
+        price += 25;
+    }
+
+    int quantity = Integer.parseInt(
+        jComboBox1.getSelectedItem().toString()
+    );
+
+    double subtotal = price * quantity;
+
+    jTextField3.setText(String.valueOf(subtotal));
+}   
 }
