@@ -16,6 +16,7 @@ public class cafetreia extends javax.swing.JFrame {
      */
     public cafetreia() {
         initComponents();
+        
     }
 
     /**
@@ -86,6 +87,10 @@ public class cafetreia extends javax.swing.JFrame {
         jCheckBox27 = new javax.swing.JCheckBox();
         jCheckBox28 = new javax.swing.JCheckBox();
         jCheckBox24 = new javax.swing.JCheckBox();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox5 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -355,7 +360,7 @@ public class cafetreia extends javax.swing.JFrame {
         });
         jPanel9.add(jCheckBox21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
 
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 130, 20));
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 130, 20));
 
         jPanel11.setBackground(new java.awt.Color(0, 0, 102));
         jPanel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -401,7 +406,39 @@ public class cafetreia extends javax.swing.JFrame {
         });
         jPanel11.add(jCheckBox24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, -1));
 
-        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 130, 20));
+        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 130, 20));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, -1, -1));
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -523,20 +560,71 @@ public class cafetreia extends javax.swing.JFrame {
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         updateSelectedItems();
-        calculateSubtotal();
 
  updateSelectedItems();    }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jCheckBox24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox24ActionPerformed
-updateSelectedItems();
-        calculateSubtotal();
+
+
  updateSelectedItems();    }//GEN-LAST:event_jCheckBox24ActionPerformed
 
     private void jCheckBox21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox21ActionPerformed
  
         updateSelectedItems();
-calculateSubtotal();        // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox21ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+  int price = 22;
+
+int quantity = Integer.parseInt(
+    jComboBox2.getSelectedItem().toString()
+);
+
+int subtotal = price * quantity;
+
+jTextField3.setText(String.valueOf(subtotal));
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+        int price = 25;
+
+int quantity = Integer.parseInt(
+    jComboBox3.getSelectedItem().toString()
+);
+
+int subtotal = price * quantity;
+
+jTextField3.setText(String.valueOf(subtotal));
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+        // TODO add your handling code here:
+        int price = 25;
+
+int quantity = Integer.parseInt(
+    jComboBox4.getSelectedItem().toString()
+);
+
+int subtotal = price * quantity;
+
+jTextField3.setText(String.valueOf(subtotal));
+    }//GEN-LAST:event_jComboBox4ActionPerformed
+
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        // TODO add your handling code here:
+        int price = 25;
+
+int quantity = Integer.parseInt(
+    jComboBox5.getSelectedItem().toString()
+);
+
+int subtotal = price * quantity;
+
+jTextField3.setText(String.valueOf(subtotal));
+    }//GEN-LAST:event_jComboBox5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -604,6 +692,10 @@ calculateSubtotal();        // TODO add your handling code here:
     private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLLabel11;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -635,26 +727,31 @@ calculateSubtotal();        // TODO add your handling code here:
 
     private void updateSelectedItems() {
     String items = "";
-    double price = 0;
+    int quantity = 0;
+    double subtotal = 0;
 
     if (jCheckBox12.isSelected()) {
         items += "PIATOS, ";
-        price += 22;
+        quantity++;
+        subtotal += 22;
     }
 
     if (jCheckBox3.isSelected()) {
         items += "NOVA, ";
-        price += 25;
+        quantity++;
+        subtotal += 25;
     }
 
     if (jCheckBox24.isSelected()) {
         items += "COKE, ";
-        price += 25;
+        quantity++;
+        subtotal += 25;
     }
 
     if (jCheckBox21.isSelected()) {
         items += "SPRITE, ";
-        price += 25;
+        quantity++;
+        subtotal += 25;
     }
 
     if (!items.isEmpty()) {
@@ -662,37 +759,7 @@ calculateSubtotal();        // TODO add your handling code here:
     }
 
     jTextField2.setText(items);
-
-    calculateSubtotal();
-}
-
-    private void calculateSubtotal() {
-           double price = 0;
-
-    String items = jTextField1.getText();
-
-    if (items.contains("PIATOS")) {
-        price += 22;
-    }
-
-    if (items.contains("NOVA")) {
-        price += 25;
-    }
-
-    if (items.contains("COKE")) {
-        price += 25;
-    }
-
-    if (items.contains("SPRITE")) {
-        price += 25;
-    }
-
-    int quantity = Integer.parseInt(
-        jComboBox1.getSelectedItem().toString()
-    );
-
-    double subtotal = price * quantity;
-
+    jComboBox1.setSelectedItem(String.valueOf(quantity));
     jTextField3.setText(String.valueOf(subtotal));
-}   
+    }
 }
