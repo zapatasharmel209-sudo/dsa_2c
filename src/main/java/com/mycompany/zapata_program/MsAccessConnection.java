@@ -12,7 +12,7 @@ public class MsAccessConnection {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
             
             // Connection URL with your specific file path
-            String url = "jdbc:ucanaccess://C://Users//Ezean//Documents//Student_Managemen.accdb";
+            String url = "jdbc:ucanaccess://C://Users//CL2-PC//Downloads//Student_Managemen.accdb";
             
             // Establish and return the connection
             Connection conn = DriverManager.getConnection(url);
